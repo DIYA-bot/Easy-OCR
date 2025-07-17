@@ -33,32 +33,39 @@
                 </div>
             </div>
 
-            <div class="controls-container">
-                <div class="select-wrapper">
-                    <label for="target-language" class="label-text">
-                        Translate to:
-                    </label>
-                    <select
-                        id="target-language"
-                        class="select-input"
-                    >
-                        <option value="en">English</option>
-                        <option value="bn">Bengali</option>
-                    </select>
-                </div>
-                <div class="button-wrapper">
-                    <button
-                        id="process-image-btn"
-                        class="process-button"
-                    >
-                        <span id="button-text">Process Image</span>
-                        <svg id="spinner" class="spinner" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
+           <div class="controls-container">
+    <div class="select-wrapper">
+        <label for="target-language" class="label-text">
+            Translate to:
+        </label>
+        <select
+            id="target-language"
+            class="select-input"
+        >
+            <option value="en">English</option>
+            <option value="bn">Bengali</option>
+        </select>
+    </div>
+    <div class="button-wrapper">
+        <button
+            id="process-image-btn"
+            class="process-button"
+        >
+            <span id="button-text">Process Image</span>
+            <svg id="spinner" class="spinner" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<div class="result-box">
+    <h2 class="result-title">
+        <svg class="result-icon purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 21h7a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v12a2 2 0 002 2h7l-2 2z"></path></svg>
+        Translated Text (<span id="translated-language-label">English</span>)
+    </h2>
+    </div>
 
             <div id="error-message" class="error-message" role="alert">
                 <strong class="error-strong">Error! </strong>
