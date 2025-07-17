@@ -113,33 +113,8 @@ body {
     object-fit: contain; /* Ensure image fits well */
 }
 
-.controls-container {
-    display: flex;
-    flex-direction: column; /* flex-col */
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 2rem; /* mb-8 */
-    gap: 1rem; /* space-y-4 */
-}
 
-@media (min-width: 640px) { /* sm breakpoint */
-    .controls-container {
-        flex-direction: row; /* sm:flex-row */
-        gap: 0; /* sm:space-y-0 */
-        margin-left: 1rem; /* sm:space-x-4 */
-        margin-right: 1rem; /* sm:space-x-4 */
-    }
-}
 
-.select-wrapper {
-    width: 100%; /* w-full */
-}
-
-@media (min-width: 640px) { /* sm breakpoint */
-    .select-wrapper {
-        width: 50%; /* sm:w-1/2 */
-    }
-}
 
 .select-input {
     display: block;
@@ -159,65 +134,91 @@ body {
     box-shadow: 0 0 0 2px #3b82f6; /* focus:ring-2 focus:ring-blue-500 */
 }
 
-.button-wrapper {
-    width: 100%; /* w-full */
+
+
+.controls-container {
     display: flex;
-    justify-content: flex-end; /* justify-end */
+    flex-direction: column;
+    align-items: stretch; /* Changed to stretch */
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    gap: 1rem;
 }
 
-@media (min-width: 640px) { /* sm breakpoint */
+@media (min-width: 640px) {
+    .controls-container {
+        flex-direction: row;
+        align-items: center; /* Added align-items: center */
+        gap: 1rem;
+    }
+}
+
+.select-wrapper {
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .select-wrapper {
+        width: auto; /* Changed to auto */
+        flex-grow: 1; /* Allow it to take available space */
+    }
+}
+
+.button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (min-width: 640px) {
     .button-wrapper {
-        width: 50%; /* sm:w-1/2 */
+        width: auto; /* Changed to auto */
     }
 }
 
 .process-button {
-    width: 100%; /* w-full */
-    padding: 0.75rem 2rem; /* px-8 py-3 */
-    background-image: linear-gradient(to right, #3b82f6, #9333ea); /* bg-gradient-to-r from-blue-500 to-purple-600 */
+    padding: 0.75rem 1.5rem; /* Adjusted padding */
+    background-image: linear-gradient(to right, #3b82f6, #9333ea);
     color: #fff;
-    font-weight: 700; /* font-bold */
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    font-weight: 700;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease-in-out; /* transition duration-300 ease-in-out */
-    transform: scale(1); /* Initial scale for hover effect */
-    display: flex;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    display: inline-flex; /* Changed to inline-flex */
     align-items: center;
     justify-content: center;
-    gap: 0.5rem; /* space-x-2 */
+    gap: 0.5rem;
+    min-width: 150px; /* Added min-width for better sizing */
 }
 
 .process-button:hover {
-    background-image: linear-gradient(to right, #2563eb, #7e22ce); /* hover:from-blue-600 hover:to-purple-700 */
-    transform: scale(1.05); /* hover:scale-105 */
+    background-image: linear-gradient(to right, #2563eb, #7e22ce);
+    transform: scale(1.05);
 }
 
 .process-button:focus {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5); /* focus:ring-4 focus:ring-blue-300 */
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
 }
 
 .process-button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-    transform: scale(1); /* Disable hover scale */
-    background-image: linear-gradient(to right, #3b82f6, #9333ea); /* Retain original gradient */
+    transform: scale(1);
+    background-image: linear-gradient(to right, #3b82f6, #9333ea);
 }
 
 .spinner {
     animation: spin 1s linear infinite;
-    height: 1.25rem; /* h-5 */
-    width: 1.25rem; /* w-5 */
+    height: 1rem; /* Adjusted size */
+    width: 1rem; /* Adjusted size */
     color: #fff;
-    display: none; /* Hidden by default */
+    display: none;
 }
 
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
 
 .error-message {
     background-color: #fee2e2; /* bg-red-100 */
