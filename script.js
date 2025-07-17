@@ -168,8 +168,9 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             
-            const apiKey = "GEMINI_API_KEY";
-            const ocrApiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+            const apiKey = "";
+            
+            const ocrApiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
 
             const ocrResponse = await fetch(ocrApiUrl, {
                 method: 'POST',
@@ -198,8 +199,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     contents: [{ role: "user", parts: [{ text: translationPrompt }] }],
                 };
 
-                const translationApiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
+                // Using gemini-1.5-flash-latest for translation as well for consistency and performance.
+                const translationApiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
+                
                 const translationResponse = await fetch(translationApiUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
