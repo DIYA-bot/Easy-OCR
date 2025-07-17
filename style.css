@@ -180,6 +180,7 @@ body {
     padding: 0.75rem 1.5rem; /* Adjusted padding */
     background-image: linear-gradient(to right, #3b82f6, #9333ea);
     color: #fff;
+    margin-top: 1.5rem;
     font-weight: 700;
     border-radius: 0.5rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
