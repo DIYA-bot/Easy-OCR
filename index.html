@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindi Text Extractor & Translator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 class="title">
+                Hindi Text Extractor & Translator
+            </h1>
+
+            <div class="section-divider">
+                <label for="image-upload" class="label-text">
+                    Upload Image with Hindi Text
+                </label>
+                <input
+                    id="image-upload"
+                    type="file"
+                    accept="image/*"
+                    class="file-input"
+                />
+                <div id="image-preview-container" class="image-preview-container">
+                    <h3 class="image-preview-title">Image Preview:</h3>
+                    <img
+                        id="image-preview"
+                        alt="Image Preview"
+                        class="image-preview"
+                    />
+                </div>
+            </div>
+
+            <div class="controls-container">
+                <div class="select-wrapper">
+                    <label for="target-language" class="label-text">
+                        Translate to:
+                    </label>
+                    <select
+                        id="target-language"
+                        class="select-input"
+                    >
+                        <option value="en">English</option>
+                        <option value="bn">Bengali</option>
+                    </select>
+                </div>
+                <div class="button-wrapper">
+                    <button
+                        id="process-image-btn"
+                        class="process-button"
+                    >
+                        <span id="button-text">Process Image</span>
+                        <svg id="spinner" class="spinner" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="error-message" class="error-message" role="alert">
+                <strong class="error-strong">Error! </strong>
+                <span id="error-text"></span>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-box">
+                    <h2 class="result-title">
+                        <svg class="result-icon blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                        Extracted Hindi Text
+                    </h2>
+                    <button id="copy-extracted" class="copy-button blue-copy">
+                        Copy
+                        <span class="copied-feedback" id="copied-extracted-feedback">Copied!</span>
+                    </button>
+                    <div id="extracted-hindi-text" class="text-display">
+                        <p class="placeholder-text">No Hindi text extracted yet. Upload an image and click "Process Image".</p>
+                    </div>
+                </div>
+
+                <div class="result-box">
+                    <h2 class="result-title">
+                        <svg class="result-icon purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 21h7a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v12a2 2 0 002 2h7l-2 2z"></path></svg>
+                        Translated Text (<span id="translated-language-label">English</span>)
+                    </h2>
+                    <button id="copy-translated" class="copy-button purple-copy">
+                        Copy
+                        <span class="copied-feedback" id="copied-translated-feedback">Copied!</span>
+                    </button>
+                    <div id="translated-text" class="text-display">
+                        <p class="placeholder-text">Translated text will appear here.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                &copy; <span id="current-year"></span> <a href="https://www.linkedin.com/in/diya-dutta-463b25334" target="_blank" rel="noopener noreferrer" class="copyright-link">Diya Dutta</a>. All rights reserved.
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
